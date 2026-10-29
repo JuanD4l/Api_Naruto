@@ -4,34 +4,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shinobi Explorer</title>
+    <meta name="description" content="Explora personajes, historias y animes con Shinobi Explorer.">
+    <title>Anime Explorer | Enciclopedia anime</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>SHINOBI <span>EXPLORER</span></h1>
-        <p>Descubre los ninjas del universo Naruto</p>
+    <header class="hero">
+        <nav class="navbar">
+            <a class="logo" href="#">ANIME<span>EXPLORER</span></a>
+            <span class="api-label">Powered by Jikan API</span>
+        </nav>
+
+        <div class="hero-content">
+            <p class="eyebrow">TU ENCICLOPEDIA ANIME</p>
+            <h1>Encuentra tu próximo <span>personaje favorito.</span></h1>
+            <p class="hero-description">
+                Explora personajes, conoce sus historias y descubre
+                en qué animes aparecen.
+            </p>
+
+            <form id="formulario-busqueda" class="search-box">
+                <label class="sr-only" for="nombre">Nombre del personaje</label>
+                <input
+                    id="nombre"
+                    type="search"
+                    placeholder="Ej. Naruto, Luffy, Goku..."
+                    autocomplete="off"
+                    required
+                    maxlength="100"
+                >
+                <button type="submit" id="buscar">Buscar</button>
+            </form>
+
+            <p class="search-hint">
+                Prueba con Naruto, Sasuke, Luffy, Goku o Ichigo.
+            </p>
+        </div>
     </header>
 
-    <main>
-        <section class="buscador">
-            <input
-                type="text"
-                id="nombre"
-                placeholder="Busca Naruto, Sasuke, Sakura..."
-            >
-            <button id="buscar">Buscar ninja</button>
-        </section>
+    <main class="contenido">
+        <section class="resultados-section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">EXPLORA EL UNIVERSO ANIME</p>
+                    <h2 id="titulo-resultados">Personajes</h2>
+                </div>
+                <span id="contador" class="contador"></span>
+            </div>
 
-        <p id="mensaje">Busca tu ninja favorito.</p>
-        <section id="personajes" class="personajes"></section>
+            <p id="mensaje" class="mensaje" role="status" aria-live="polite">
+                Escribe el nombre de un personaje para comenzar.
+            </p>
+
+            <section
+                id="personajes"
+                class="personajes-grid"
+                aria-label="Resultados de personajes"
+            ></section>
+
+            <div class="acciones">
+                <button id="cargar-mas" class="boton-secundario" hidden>
+                    Cargar más resultados
+                </button>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <p>Proyecto SENA · Consumo de API de terceros</p>
-        <p>Datos obtenidos mediante Dattebayo API</p>
+        <p>Anime Explorer · Proyecto SENA</p>
+        <p>Datos proporcionados por Jikan API y MyAnimeList.</p>
+        <p class="footer-note">
+            La información puede estar incompleta o variar según la fuente.
+        </p>
     </footer>
-
-    <script src="app.js"></script>
 </body>
 </html>
