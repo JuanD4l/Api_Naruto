@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shinobi Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>SHINOBI <span>EXPLORER</span></h1>
+        <p>Descubre los ninjas del universo Naruto</p>
+    </header>
+
+    <main>
+        <section class="buscador">
+            <input
+                type="text"
+                id="nombre"
+                placeholder="Busca Naruto, Sasuke, Sakura..."
+            >
+            <button id="buscar">Buscar ninja</button>
+        </section>
+
+        <p id="mensaje">Busca tu ninja favorito.</p>
+        <section id="personajes" class="personajes"></section>
+    </main>
+
+    <footer>
+        <p>Proyecto SENA · Consumo de API de terceros</p>
+        <p>Datos obtenidos mediante Dattebayo API</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
